@@ -1,4 +1,6 @@
-import tkinter as tk 
+from InterfaceDaCalculadora import make_root
+def main():
+    root = make_root()
+    root.mainloop()
 
-root = tk.Tk()
-root.mainloop()
+main()
