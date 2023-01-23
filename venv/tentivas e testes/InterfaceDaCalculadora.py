@@ -1,10 +1,14 @@
 import tkinter as tk
+from tkinter import *
 
 
 def make_root() -> tk.Tk:
 
+
+
     def UI():
         root = tk.Tk()
+        entry = tk.StringVar()
 
         def dimensions():
             root.title('Calculadora')
@@ -12,6 +16,10 @@ def make_root() -> tk.Tk:
             root.geometry('400x450+50+50')
             root.resizable(False, False)
            # root.attributes('-alpha', 0.95)
+
+        def frames():
+            entry.barra = Frame(root)
+
 
         def icon():
             root.iconbitmap('img/umbrellaIcon.ico')
@@ -37,13 +45,17 @@ def make_root() -> tk.Tk:
             pRight = tk.Button(root, text="(").place()
             pLeft = tk.Button(root, text=")").place()
 
-
+        def input():
+            cal = StringVar()
+            expression_field = tk.Entry(root, textvariable=cal)
+            expression_field.grid(columnspan=4, ipadx=70)
 
 
 
 
 
         dimensions()
+        frames()
         icon()
         buttons()
         return root

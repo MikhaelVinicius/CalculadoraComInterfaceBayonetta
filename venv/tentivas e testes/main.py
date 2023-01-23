@@ -1,4 +1,4 @@
-from calculadora import make_root
+from InterfaceDaCalculadora import make_root
 
 def main():
     root = make_root()
