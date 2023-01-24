@@ -16,6 +16,7 @@ class Calcu:
         self.config_buttons()
         self._config_display()
         self.root.mainloop()
+
     def config_buttons(self):
         buttons = self.buttons
         for row_values in buttons:
@@ -23,12 +24,17 @@ class Calcu:
                 button_text = button['text']
                 if button_text == 'C':
                     button.bind('<Button-1>', self.clear)
+                    button.config(bg='#EA4335', fg = '#fff')
                 if button_text in '0123456789.+-/*()^':
                     button.bind('<Button-1>', self.add_text_to_display)
-                    if button_text in '=':
-                        button.bind('<Button-1>', self.calculate)
+
+                if button_text in '=':
+                    button.bind('<Button-1>', self.calculate)
+                    button.config(bg='#4785F4', fg='#fff')
+
     def _config_display(self):
-       ...
+       self.display.bind('<Return>', self.calculate)
+       self.display.bind('<KP_Enter>', self.calculate)
 
     def _fix_text(self, text):
         #Expressões irregulares biblioteca re
