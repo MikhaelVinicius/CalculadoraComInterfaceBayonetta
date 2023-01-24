@@ -57,3 +57,4 @@ def make_buttons(root) -> List[List[tk.Button]]:
             button_row.append(btn)
 
         buttons.append(button_row)
+    return buttons
